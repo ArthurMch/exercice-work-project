@@ -1,5 +1,10 @@
 //variables
-const apiKey = '5d02e70991a1daa5f8144ab196d1e9ac'
+const apiKey = '8617438129237c27812b0a81bbcd7483';
+const tempElement = document.querySelector(".temperature-value p");
+const weatherState = document.querySelector(".temperature-description p");
+const localisation = document.querySelector(".location p");
+
+//demande de la géoloc
 if ("geolocation" in navigator){
 	navigator.geolocation.getCurrentPosition(setPosition, showError);
 } else {
@@ -30,18 +35,27 @@ function Weather(longitude, latitude) {
 		})
 		.then(function(data) {
 			city = data.name;
-			temps = data.weather[0].description;
-			tempMax = Math.round(data.main.temp_max - 273,15);
-			tempMin = Math.round(data.main.temp_min - 273,15);
+			temp = data.weather[0].description;
+			tempMax = Math.round(data.main.temp_max - 273,15) + "°C";
+			tempMin = Math.round(data.main.temp_min - 273,15) + "°C";
 		})
 		.then(function Affichage() {
 			console.log("Vous etes à : " + city);
-			if (temps == 'clear sky') {
-				console.log("Le temps est : " + 'Ciel dégagé');
+			if (temp == 'clear sky') {
+				temp = 'Ciel dégagé'
+				console.log("Le temps est : " + temp);
+			} else if (temp == 'overcast clouds') {
+				temp = 'Ciel couvert'
+				console.log("Le temps est : " + temp);
+			} else if (temp == 'broken clouds') {
+				temp = 'Ciel légerement couvert'
+				console.log("Le temps est : " + temp);
 			} else {
-				console.log("Le temps est : " + temps + "a trad")
+				console.log("Le temps est : " + temp + "a trad");
 			}
-			console.log("La température maximal est : " + tempMax + "°C");
-			console.log("La température minimal est : " + tempMin + "°C");
+			console.log("La température minimal est : " + tempMin);
+			tempElement.innerHTML = tempMax;
+			weatherState.innerHTML = temp;
+			localisation.innerHTML = city;
 		})
 }
