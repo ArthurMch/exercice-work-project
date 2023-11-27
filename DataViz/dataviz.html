@@ -1,53 +1,48 @@
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name = "viewport" content = "width = device-width, initial-scale=1">
-		<title>Meteo App</title>
-		<link rel="stylesheet" href="dataviz.css">
-		<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
-	</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale=1">
+        <title>Meteo App</title>
+        <link rel="stylesheet" href="dataviz.css">
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    </head>
+    <body>
 
-	<body>
-		
-		<nav class="menu">
-			<ul>
-			  <li><a href="simp.html">Météo Plus+</a></li>
-			</ul>
-		</nav>
-
-		<main>
-			<h1>meteo</h1>
-			<div class="location">
-				<i class="fas fa-map-marker-alt" aria-hidden="true"></i> <p> - </p>
-			</div>
-			<div class="notification"></div>
-			<div class="weather-container">
-				<div class="weather-icon">
-					<img src="https://margaux-dev.github.io/weather-app/icons-weather/unknown.svg" alt="Rainbow">
+        <main>
+            <h1 class="title">meteo</h1><br/><br/>
+            <div class="location">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <p> - </p>
+            </div>
+            <div class="notification"></div>
+            <div class="weather-container">
+                <div class="weather-icon">
+                </div>
+                <div class="temperature-value"><br/>
+                    <p> - °<span>C</span></p>
+                </div>
+            </br>
+                <div class="temperature-description">
+                    <p> - </p>
+                </div>
+            </div>
+            <nav class="menu">
+                <div>
+					<ul>
+						<li><a href="simp.html">meteo plus</a></li>
+					</ul>
 				</div>
-				<div class="temperature-value">
-					<p> - °<span>C</span></p>
-				</div>
-				<div class="temperature-description">
-					<p> - </p>
-				</div>
-				
-			</div>
-		</main>
+            </nav> 
+            <br><br>
+            <div class="input-container">
+            Choisisez une ville :
+            <input id="newCity" placeholder="Enter text" class="input-field" type="text">
+            <label for="input-field" class="input-label"></label>
+            <span class="input-highlight"></span>
+        </div>
+        </main>
 
+        <script src="dataviz.js"></script>
+    </body>
 
-
-	<script src="dataviz.js"></script>
-		
-	
-	<div class="input-container">
-		<input id="newCity" placeholder="Enter text" class="input-field" type="text">
-		<label for="input-field" class="input-label"></label>
-		<span class="input-highlight"></span>
-	</div>
-
-
-
-	</body>
 </html>
