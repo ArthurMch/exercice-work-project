@@ -1,5 +1,5 @@
 //variables
-const apiKey = '89f3aec5ef5ed977a7fa13a326ddb793';
+const apiKey = '6f77ca84f9b1e542d95bbd1110df49e7';
 const apiKey2 = '8617438129237c27812b0a81bbcd7483';
 const temperatureMax = document.querySelector(".temperature-value p");
 const weatherState = document.querySelector(".temperature-description p");
