@@ -268,6 +268,17 @@ document.getElementById("newCity2").addEventListener("keypress", function (keypr
 	}
 })
 
+function changeVideoSource(newVideoId) {
+    var iframe = document.getElementById('video_');
+    iframe.src = 'https://www.youtube.com/embed/' + newVideoId + '?autoplay=1&controls=0&loop=1&mute=1&playlist=' + newVideoId;
+}
+
+// video soleil  : changeVideoSource('wXs2PRaLm60'); clear cast / overcast cloud / degagé
+// video nuageux : changeVideoSource('6HsepgHlIFg'); scattered cloud / nuageux
+// video neige   : changeVideoSource('jX6jkuqb2A8');
+// video nuit    : changeVideoSource('dP2RpWM4vz8'); if night time ?
+// video pluie   : changeVideoSource('RvreULjnzFo'); shower and light rain
+
 
 //btn = document.querySelector(".action").addEventListener("click", compare);
 
