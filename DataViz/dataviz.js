@@ -208,16 +208,16 @@ function findCity(City2) {
 
 //comparaison entre les 2 containers html
 function compare(){
-	let compareTemperatureMax = (meteos[0].getTemperatureMax() - meteos[1].getTemperatureMax());
+	let compareTemperatureMax = parseInt(meteos[0].getTemperatureMax()) - parseInt(meteos[1].getTemperatureMax());
     let compareWeatherState = meteos[0].getWeatherState() + " - " + meteos[1].getWeatherState();
     let compareLocalisation = meteos[0].getLocalisation() + " - " + meteos[1].getLocalisation();
     let compareLongi = (meteos[0].getLongi() - meteos[1].getLongi());
     let compareLati = (meteos[0].getLati() - meteos[1].getLati());
-    let compareTemperatureRess = meteos[0].getTemperatureRess() - meteos[1].getTemperatureRess();
-    let compareHumidité = meteos[0].getHumidité() - meteos[1].getHumidité();
-    let comparePression = meteos[0].getPression() - meteos[1].getPression();
+    let compareTemperatureRess = parseInt(meteos[0].getTemperatureRess()) - parseInt(meteos[1].getTemperatureRess());
+    let compareHumidité = parseInt(meteos[0].getHumidité()) - parseInt(meteos[1].getHumidité());
+    let comparePression = parseInt(meteos[0].getPression()) - parseInt(meteos[1].getPression());
     let comparePays = meteos[0].getPays() + " - " + meteos[1].getPays();
-    let compareWindSpeed = meteos[0].getWindSpeed() - meteos[1].getWindSpeed();
+    let compareWindSpeed = parseInt(meteos[0].getWindSpeed()) - parseInt(meteos[1].getWindSpeed());
 	
 	comparedTemperatureMax.innerHTML = "la différence de temperature est : " + compareTemperatureMax + " °C ";
 	comparedWeatherState.innerHTML = "Les deux météo sont : " + compareWeatherState;
@@ -280,6 +280,6 @@ function changeVideoSource(newVideoId) {
 // video pluie   : changeVideoSource('RvreULjnzFo'); shower and light rain
 
 
-//btn = document.querySelector(".action").addEventListener("click", compare);
+btn = document.querySelector(".action").addEventListener("click", compare);
 
 geoloc();
