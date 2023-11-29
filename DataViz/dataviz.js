@@ -82,6 +82,8 @@ class MeteoData {
 }
 let meteos = [];
 
+geoloc();
+
 //demande de la géoloc
 function geoloc() {
 	if ("geolocation" in navigator){
@@ -222,13 +224,13 @@ function compare(){
 	comparedTemperatureMax.innerHTML = "la différence de temperature est : " + compareTemperatureMax + " °C ";
 	comparedWeatherState.innerHTML = "Les deux météo sont : " + compareWeatherState;
 	comparedLocalisation.innerHTML = "Les deux villes sont : " + compareLocalisation;
-	comparedLongi.innerHTML = "La différence de longitude est : " + compareLongi;
-	comparedLati.innerHTML = "La différence de latitude est : " + compareLati;
-	comparedTemperatureRess.innerHTML = "La différence de température ressenti est : " + compareTemperatureRess;
-	comparedHumidité.innerHTML = "La différence d'humidité est : " + compareHumidité;
-	comparedPression.innerHTML = "La différence de pression est : " + comparePression;
+	comparedLongi.innerHTML = "La différence de longitude est : " + (Math.round(compareLongi * 100000) / 100000);
+	comparedLati.innerHTML = "La différence de latitude est : " + (Math.round(compareLati * 100000) / 100000);
+	comparedTemperatureRess.innerHTML = "La différence de température ressenti est : " + compareTemperatureRess + " °C";
+	comparedHumidité.innerHTML = "La différence d'humidité est : " + compareHumidité + " %";
+	comparedPression.innerHTML = "La différence de pression est : " + comparePression + " Bar";
 	comparedPays.innerHTML = "Les deux pays sont : " + comparePays;
-	comparedWindSpeed.innerHTML = "La différence de vitesse du vent est : " + compareWindSpeed;
+	comparedWindSpeed.innerHTML = "La différence de vitesse du vent est : " + compareWindSpeed + " m/s";
 
     /*return(comparedTemperatureMax, comparedWeatherState, comparedLocalisation, comparedLongi, comparedLati,
         comparedTemperatureRess, comparedHumidité, comparedPression, comparedPays, comparedWindSpeed)*/
@@ -281,5 +283,3 @@ function changeVideoSource(newVideoId) {
 
 
 btn = document.querySelector(".action").addEventListener("click", compare);
-
-geoloc();
