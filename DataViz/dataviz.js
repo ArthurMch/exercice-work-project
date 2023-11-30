@@ -144,7 +144,7 @@ function Weather(longitude, latitude) {
 				temp = 'Forte pluie'
 				console.log("Le temps est : " + temp);
 			} else if (temp == 'light rain') {
-				temp = 'Petite pluie'
+				temp = 'Pluie légère'
 				console.log("Le temps est : " + temp);
 			} else if (temp == 'mist') {
 				temp = 'Brouillard'
